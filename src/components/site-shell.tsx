@@ -30,7 +30,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
           <Link to="/" className="flex items-center gap-3" aria-label="Honeywell School home">
             <img
-              src="/logo.svg"
+              src="/logo.png"
               alt="Honeywell School crest"
               width={44}
               height={48}
@@ -95,7 +95,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <footer className="bg-ink pb-20 text-paper/70 lg:pb-0">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-[1.2fr_1fr_1fr]">
           <div>
-            <div className="flex items-center gap-3"><img src="/logo.svg" alt="Honeywell School crest" width={44} height={48} className="size-11 shrink-0 rounded-md bg-white object-contain p-0.5" /><span className="font-extrabold text-paper">Honeywell School</span></div>
+            <div className="flex items-center gap-3"><img src="/logo.png" alt="Honeywell School crest" width={44} height={48} className="size-11 shrink-0 rounded-md bg-white object-contain p-0.5" /><span className="font-extrabold text-paper">Honeywell School</span></div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed">A demonstration school website. All names, dates, statistics, fees, accreditations, and contact details must be verified before launch.</p>
           </div>
           <div>
