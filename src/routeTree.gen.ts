@@ -11,8 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdmissionsRouteImport } from './routes/admissions'
 import { Route as CampusRouteImport } from './routes/campus'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as NewsRouteImport } from './routes/news'
 import { Route as ProgramsRouteImport } from './routes/programs'
+import { Route as StoriesRouteImport } from './routes/stories'
 import { Route as TeamRouteImport } from './routes/team'
 
 const IndexRoute = IndexRouteImport.update({
@@ -25,14 +29,34 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdmissionsRoute = AdmissionsRouteImport.update({
+  id: '/admissions',
+  path: '/admissions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CampusRoute = CampusRouteImport.update({
   id: '/campus',
   path: '/campus',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsRoute = NewsRouteImport.update({
+  id: '/news',
+  path: '/news',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProgramsRoute = ProgramsRouteImport.update({
   id: '/programs',
   path: '/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StoriesRoute = StoriesRouteImport.update({
+  id: '/stories',
+  path: '/stories',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TeamRoute = TeamRouteImport.update({
@@ -44,38 +68,82 @@ const TeamRoute = TeamRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admissions': typeof AdmissionsRoute
   '/campus': typeof CampusRoute
+  '/contact': typeof ContactRoute
+  '/news': typeof NewsRoute
   '/programs': typeof ProgramsRoute
+  '/stories': typeof StoriesRoute
   '/team': typeof TeamRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admissions': typeof AdmissionsRoute
   '/campus': typeof CampusRoute
+  '/contact': typeof ContactRoute
+  '/news': typeof NewsRoute
   '/programs': typeof ProgramsRoute
+  '/stories': typeof StoriesRoute
   '/team': typeof TeamRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admissions': typeof AdmissionsRoute
   '/campus': typeof CampusRoute
+  '/contact': typeof ContactRoute
+  '/news': typeof NewsRoute
   '/programs': typeof ProgramsRoute
+  '/stories': typeof StoriesRoute
   '/team': typeof TeamRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/campus' | '/programs' | '/team'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/admissions'
+    | '/campus'
+    | '/contact'
+    | '/news'
+    | '/programs'
+    | '/stories'
+    | '/team'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/campus' | '/programs' | '/team'
-  id: '__root__' | '/' | '/about' | '/campus' | '/programs' | '/team'
+  to:
+    | '/'
+    | '/about'
+    | '/admissions'
+    | '/campus'
+    | '/contact'
+    | '/news'
+    | '/programs'
+    | '/stories'
+    | '/team'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/admissions'
+    | '/campus'
+    | '/contact'
+    | '/news'
+    | '/programs'
+    | '/stories'
+    | '/team'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AdmissionsRoute: typeof AdmissionsRoute
   CampusRoute: typeof CampusRoute
+  ContactRoute: typeof ContactRoute
+  NewsRoute: typeof NewsRoute
   ProgramsRoute: typeof ProgramsRoute
+  StoriesRoute: typeof StoriesRoute
   TeamRoute: typeof TeamRoute
 }
 
@@ -95,6 +163,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admissions': {
+      id: '/admissions'
+      path: '/admissions'
+      fullPath: '/admissions'
+      preLoaderRoute: typeof AdmissionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/campus': {
       id: '/campus'
       path: '/campus'
@@ -102,11 +177,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CampusRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news': {
+      id: '/news'
+      path: '/news'
+      fullPath: '/news'
+      preLoaderRoute: typeof NewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/programs': {
       id: '/programs'
       path: '/programs'
       fullPath: '/programs'
       preLoaderRoute: typeof ProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stories': {
+      id: '/stories'
+      path: '/stories'
+      fullPath: '/stories'
+      preLoaderRoute: typeof StoriesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/team': {
@@ -122,8 +218,12 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AdmissionsRoute: AdmissionsRoute,
   CampusRoute: CampusRoute,
+  ContactRoute: ContactRoute,
+  NewsRoute: NewsRoute,
   ProgramsRoute: ProgramsRoute,
+  StoriesRoute: StoriesRoute,
   TeamRoute: TeamRoute,
 }
 export const routeTree = rootRouteImport
