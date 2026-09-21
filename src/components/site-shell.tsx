@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, Menu, MessageCircle, Phone } from "lucide-react";
+import { Mail, MapPin, Menu, MessageCircle, Phone } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -29,7 +29,13 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-50 border-b border-ink/10 bg-paper/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
           <Link to="/" className="flex items-center gap-3" aria-label="Honeywell School home">
-            <span className="grid size-10 place-items-center bg-ink text-lg font-extrabold text-paper">H</span>
+            <img
+              src="/logo.png"
+              alt="Honeywell School crest"
+              width={40}
+              height={40}
+              className="size-10 rounded-sm bg-white object-contain ring-1 ring-ink/10"
+            />
             <span className="leading-none">
               <span className="block text-[15px] font-extrabold">HONEYWELL SCHOOL</span>
               <span className="mt-1 block text-[9px] font-semibold uppercase tracking-[0.22em] text-ink-soft">
@@ -53,7 +59,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
           <div className="hidden items-center gap-2 sm:flex">
             <Button asChild variant="ghost" size="icon" aria-label="Call admissions">
-              <a href="tel:+1555014000"><Phone /></a>
+              <a href="tel:+233244362657"><Phone /></a>
             </Button>
             <Button asChild className="rounded-none bg-action text-action-foreground hover:bg-action/90">
               <Link to="/contact"><span className="size-2 rounded-full bg-action-foreground" />Contact Admissions</Link>
@@ -89,7 +95,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <footer className="bg-ink pb-20 text-paper/70 lg:pb-0">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-[1.2fr_1fr_1fr]">
           <div>
-            <div className="flex items-center gap-3"><span className="grid size-10 place-items-center bg-paper text-lg font-black text-ink">H</span><span className="font-extrabold text-paper">Honeywell School</span></div>
+            <div className="flex items-center gap-3"><img src="/logo.png" alt="Honeywell School crest" width={40} height={40} className="size-10 rounded-sm bg-white object-contain" /><span className="font-extrabold text-paper">Honeywell School</span></div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed">A demonstration school website. All names, dates, statistics, fees, accreditations, and contact details must be verified before launch.</p>
           </div>
           <div>
@@ -101,7 +107,8 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-action">Admissions</p>
             <div className="mt-4 space-y-3 text-sm">
-              <a href="tel:+1555014000" className="flex items-center gap-2 hover:text-paper"><Phone className="size-4" /> +1 (555) 014-000</a>
+              <a href="tel:+233244362657" className="flex items-center gap-2 hover:text-paper"><Phone className="size-4" /> 024 436 2657</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=JR64%2BFJ+Accra" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-paper"><MapPin className="size-4" /> JR64+FJ Accra, Ghana</a>
               <a href="mailto:admissions@honeywell.example" className="flex items-center gap-2 hover:text-paper"><Mail className="size-4" /> admissions@honeywell.example</a>
               <Link to="/contact" className="flex items-center gap-2 hover:text-paper"><MessageCircle className="size-4" /> Ask a question</Link>
             </div>
@@ -112,7 +119,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-ink/10 bg-paper/95 p-3 backdrop-blur-md lg:hidden">
         <div className="mx-auto flex max-w-md gap-2">
-          <Button asChild variant="outline" size="icon" className="size-11 shrink-0 rounded-full"><a href="tel:+1555014000" aria-label="Call admissions"><Phone /></a></Button>
+          <Button asChild variant="outline" size="icon" className="size-11 shrink-0 rounded-full"><a href="tel:+233244362657" aria-label="Call admissions"><Phone /></a></Button>
           <Button asChild className="h-11 flex-1 rounded-none bg-action text-action-foreground hover:bg-action/90"><Link to="/contact">Contact Admissions</Link></Button>
         </div>
       </div>
