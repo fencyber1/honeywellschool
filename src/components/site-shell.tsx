@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/sheet";
 
 const navigation = [
+  { label: "Home", to: "/" },
   { label: "About", to: "/about" },
   { label: "Programs", to: "/programs" },
   { label: "Admissions", to: "/admissions" },
@@ -51,6 +52,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 to={item.to}
                 className="text-sm font-semibold text-ink-soft transition-colors hover:text-ink"
                 activeProps={{ className: "text-ink" }}
+                activeOptions={item.to === "/" ? { exact: true } : undefined}
               >
                 {item.label}
               </Link>
@@ -68,7 +70,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="sm:hidden" aria-label="Open navigation"><Menu /></Button>
+              <Button variant="outline" size="icon" aria-label="Open navigation"><Menu /></Button>
             </SheetTrigger>
             <SheetContent className="w-[88%] bg-paper">
               <SheetHeader className="text-left">
@@ -102,7 +104,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-action">Explore</p>
             <div className="mt-4 grid grid-cols-2 gap-2 text-sm">
-              {navigation.slice(0, 6).map((item) => <Link key={item.to} to={item.to} className="hover:text-paper">{item.label}</Link>)}
+              {navigation.slice(0, 7).map((item) => <Link key={item.to} to={item.to} className="hover:text-paper">{item.label}</Link>)}
             </div>
           </div>
           <div>
