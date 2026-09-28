@@ -98,7 +98,6 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <div className="flex items-center gap-3"><img src="/logo.png" alt="Honeywell School crest" width={44} height={48} className="size-11 shrink-0 rounded-md bg-white object-contain p-0.5" /><span className="font-extrabold text-paper">Honeywell School</span></div>
             <p className="mt-4 font-serif text-lg italic leading-snug text-paper">“Love and Education That Enrich for Life Time.”</p>
             <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.18em] text-paper/50">Our motto</p>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed">A demonstration school website. All names, dates, statistics, fees, accreditations, and contact details must be verified before launch.</p>
           </div>
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-action">Explore</p>
@@ -116,7 +115,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
             </div>
           </div>
         </div>
-        <div className="border-t border-paper/10 px-5 py-5 text-center text-xs text-paper/50">© 2026 Honeywell School · Demonstration prototype</div>
+        <div className="border-t border-paper/10 px-5 py-5 text-center text-xs text-paper/50">© 2026 Honeywell School · Accra, Ghana</div>
       </footer>
 
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-ink/10 bg-paper/95 p-3 backdrop-blur-md lg:hidden">
