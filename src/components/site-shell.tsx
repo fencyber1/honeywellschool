@@ -21,7 +21,6 @@ const navigation = [
   { label: "Campus", to: "/campus" },
   { label: "Team", to: "/team" },
   { label: "Stories", to: "/stories" },
-  { label: "News", to: "/news" },
 ] as const;
 
 export function SiteShell({ children }: { children: ReactNode }) {
