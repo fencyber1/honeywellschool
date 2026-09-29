@@ -13,9 +13,9 @@ import { ContactForm, Section } from "@/components/school-shared";
 // project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
-    { title: "Honeywell School — Where Excellence Meets Opportunity" },
+    { title: "Honeywell School — Love and Education That Enrich for a Life Time" },
     { name: "description", content: "Discover Honeywell School's preschool programs, campus life, and admissions experience." },
-    { property: "og:title", content: "Honeywell School — Where Excellence Meets Opportunity" },
+    { property: "og:title", content: "Honeywell School — Love and Education That Enrich for a Life Time" },
     { property: "og:description", content: "A warm, ambitious school community where every student is known and challenged." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },

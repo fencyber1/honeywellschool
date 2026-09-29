@@ -38,7 +38,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <span className="leading-none">
               <span className="block text-[15px] font-extrabold">HONEYWELL SCHOOL</span>
               <span className="mt-1 block text-[9px] font-semibold uppercase tracking-[0.22em] text-ink-soft">
-                Love and education that enrich for life time
+                Love and education that enrich for a life time
               </span>
             </span>
           </Link>
@@ -96,7 +96,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-[1.2fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-3"><img src="/logo.png" alt="Honeywell School crest" width={44} height={48} className="size-11 shrink-0 rounded-md bg-white object-contain p-0.5" /><span className="font-extrabold text-paper">Honeywell School</span></div>
-            <p className="mt-4 font-serif text-lg italic leading-snug text-paper">“Love and Education That Enrich for Life Time.”</p>
+            <p className="mt-4 font-serif text-lg italic leading-snug text-paper">“Love and Education That Enrich for a Life Time.”</p>
             <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.18em] text-paper/50">Our motto</p>
             <div className="mt-4 flex items-center gap-2">
               <Button asChild variant="outline" size="icon" className="size-9 rounded-full border-paper/20 bg-transparent text-paper/70 hover:bg-paper/10 hover:text-paper" aria-label="Honeywell School on Facebook"><a href="https://web.facebook.com/honeywellschool" target="_blank" rel="noreferrer"><Facebook className="size-4" /></a></Button>
