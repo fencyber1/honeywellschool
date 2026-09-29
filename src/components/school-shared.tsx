@@ -32,7 +32,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
     <form onSubmit={submit} className="rounded-lg border border-paper/20 bg-paper/10 p-5 backdrop-blur-md sm:p-7">
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="text-sm text-paper/80">Parent name<input required className="mt-1 w-full rounded-md border border-paper/20 bg-paper/10 px-3 py-2.5 text-paper outline-none placeholder:text-paper/40 focus:border-action" placeholder="Your name" /></label>
-        <label className="text-sm text-paper/80">Email<input required type="email" className="mt-1 w-full rounded-md border border-paper/20 bg-paper/10 px-3 py-2.5 text-paper outline-none placeholder:text-paper/40 focus:border-action" placeholder="you@example.com" /></label>
+        <label className="text-sm text-paper/80">Email<input required type="email" className="mt-1 w-full rounded-md border border-paper/20 bg-paper/10 px-3 py-2.5 text-paper outline-none placeholder:text-paper/40 focus:border-action" placeholder="yourname@gmail.com" /></label>
       </div>
       <label className="mt-4 block text-sm text-paper/80">Class of interest<select className="mt-1 w-full rounded-md border border-paper/20 bg-ink px-3 py-2.5 text-paper outline-none focus:border-action"><option>Creche</option><option>Nursery</option><option>Preschool</option><option>Not sure yet</option></select></label>
       <label className="mt-4 block text-sm text-paper/80">Preferred branch<select className="mt-1 w-full rounded-md border border-paper/20 bg-ink px-3 py-2.5 text-paper outline-none focus:border-action"><option>Airport Residential Area</option><option>Palm Valley Estates, Oyarifa</option><option>Not sure yet</option></select></label>
