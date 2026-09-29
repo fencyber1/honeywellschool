@@ -15,7 +15,6 @@ import { Route as AdmissionsRouteImport } from './routes/admissions'
 import { Route as CampusRouteImport } from './routes/campus'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ProgramsRouteImport } from './routes/programs'
-import { Route as StoriesRouteImport } from './routes/stories'
 import { Route as TeamRouteImport } from './routes/team'
 
 const IndexRoute = IndexRouteImport.update({
@@ -48,11 +47,6 @@ const ProgramsRoute = ProgramsRouteImport.update({
   path: '/programs',
   getParentRoute: () => rootRouteImport,
 } as any)
-const StoriesRoute = StoriesRouteImport.update({
-  id: '/stories',
-  path: '/stories',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const TeamRoute = TeamRouteImport.update({
   id: '/team',
   path: '/team',
@@ -66,7 +60,6 @@ export interface FileRoutesByFullPath {
   '/campus': typeof CampusRoute
   '/contact': typeof ContactRoute
   '/programs': typeof ProgramsRoute
-  '/stories': typeof StoriesRoute
   '/team': typeof TeamRoute
 }
 export interface FileRoutesByTo {
@@ -76,7 +69,6 @@ export interface FileRoutesByTo {
   '/campus': typeof CampusRoute
   '/contact': typeof ContactRoute
   '/programs': typeof ProgramsRoute
-  '/stories': typeof StoriesRoute
   '/team': typeof TeamRoute
 }
 export interface FileRoutesById {
@@ -87,7 +79,6 @@ export interface FileRoutesById {
   '/campus': typeof CampusRoute
   '/contact': typeof ContactRoute
   '/programs': typeof ProgramsRoute
-  '/stories': typeof StoriesRoute
   '/team': typeof TeamRoute
 }
 export interface FileRouteTypes {
@@ -99,7 +90,6 @@ export interface FileRouteTypes {
     | '/campus'
     | '/contact'
     | '/programs'
-    | '/stories'
     | '/team'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -109,7 +99,6 @@ export interface FileRouteTypes {
     | '/campus'
     | '/contact'
     | '/programs'
-    | '/stories'
     | '/team'
   id:
     | '__root__'
@@ -119,7 +108,6 @@ export interface FileRouteTypes {
     | '/campus'
     | '/contact'
     | '/programs'
-    | '/stories'
     | '/team'
   fileRoutesById: FileRoutesById
 }
@@ -130,7 +118,6 @@ export interface RootRouteChildren {
   CampusRoute: typeof CampusRoute
   ContactRoute: typeof ContactRoute
   ProgramsRoute: typeof ProgramsRoute
-  StoriesRoute: typeof StoriesRoute
   TeamRoute: typeof TeamRoute
 }
 
@@ -178,13 +165,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgramsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/stories': {
-      id: '/stories'
-      path: '/stories'
-      fullPath: '/stories'
-      preLoaderRoute: typeof StoriesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/team': {
       id: '/team'
       path: '/team'
@@ -202,7 +182,6 @@ const rootRouteChildren: RootRouteChildren = {
   CampusRoute: CampusRoute,
   ContactRoute: ContactRoute,
   ProgramsRoute: ProgramsRoute,
-  StoriesRoute: StoriesRoute,
   TeamRoute: TeamRoute,
 }
 export const routeTree = rootRouteImport
