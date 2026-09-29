@@ -34,7 +34,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
         <label className="text-sm text-paper/80">Parent name<input required className="mt-1 w-full rounded-md border border-paper/20 bg-paper/10 px-3 py-2.5 text-paper outline-none placeholder:text-paper/40 focus:border-action" placeholder="Your name" /></label>
         <label className="text-sm text-paper/80">Email<input required type="email" className="mt-1 w-full rounded-md border border-paper/20 bg-paper/10 px-3 py-2.5 text-paper outline-none placeholder:text-paper/40 focus:border-action" placeholder="you@example.com" /></label>
       </div>
-      <label className="mt-4 block text-sm text-paper/80">Class of interest<select className="mt-1 w-full rounded-md border border-paper/20 bg-ink px-3 py-2.5 text-paper outline-none focus:border-action"><option>Creche</option><option>Nursery</option><option>Kindergarten</option><option>Not sure yet</option></select></label>
+      <label className="mt-4 block text-sm text-paper/80">Class of interest<select className="mt-1 w-full rounded-md border border-paper/20 bg-ink px-3 py-2.5 text-paper outline-none focus:border-action"><option>Creche</option><option>Nursery</option><option>Preschool</option><option>Not sure yet</option></select></label>
       <label className="mt-4 block text-sm text-paper/80">Preferred branch<select className="mt-1 w-full rounded-md border border-paper/20 bg-ink px-3 py-2.5 text-paper outline-none focus:border-action"><option>Airport Residential Area</option><option>Palm Valley Estates, Oyarifa</option><option>Not sure yet</option></select></label>
       {!compact && <label className="mt-4 block text-sm text-paper/80">How can we help?<textarea required rows={4} className="mt-1 w-full resize-none rounded-md border border-paper/20 bg-paper/10 px-3 py-2.5 text-paper outline-none placeholder:text-paper/40 focus:border-action" placeholder="Tell us about your child and what you would like to know." /></label>}
       <Button type="submit" className="mt-5 h-11 w-full rounded-none bg-action text-action-foreground hover:bg-action/90"><Send /> Send to Admissions</Button>
@@ -46,7 +46,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
 const answers = [
   ["How do I apply?", "Visit Admissions for the four-step application guide and enquiry form."],
   ["Can I tour the campus?", "Yes. Use Contact Admissions to request a weekday visit."],
-  ["What ages do you serve?", "We serve preschool-aged children — call 024 436 2657 and we will help with class placement."],
+  ["What ages do you serve?", "We welcome children from 3 months to 6 years — call 024 436 2657 and we will help with class placement."],
 ] as const;
 
 export function AdmissionsChat() {

@@ -110,7 +110,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-action">Admissions</p>
             <div className="mt-4 space-y-3 text-sm">
               <a href="tel:+233244362657" className="flex items-center gap-2 hover:text-paper"><Phone className="size-4" /> 024 436 2657</a>
-              <a href="https://www.google.com/maps/search/?api=1&query=Honeywell+School+Airport+Residential+Area+Accra" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-paper"><MapPin className="size-4" /> Branch 1 — Airport Residential Area, Accra</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=12+Osibisa+Close+Airport+West+Accra" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-paper"><MapPin className="size-4" /> Branch 1 — 12 Osibisa Close, Airport West</a>
               <a href="https://www.google.com/maps/search/?api=1&query=Honeywell+School+Palm+Valley+Estates+Oyarifa" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-paper"><MapPin className="size-4" /> Branch 2 — Palm Valley Estates, Oyarifa</a>
               <a href="mailto:admissions@honeywell.example" className="flex items-center gap-2 hover:text-paper"><Mail className="size-4" /> admissions@honeywell.example</a>
               <Link to="/contact" className="flex items-center gap-2 hover:text-paper"><MessageCircle className="size-4" /> Ask a question</Link>
