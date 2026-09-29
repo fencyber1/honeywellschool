@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, MapPin, Menu, MessageCircle, Phone } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, Menu, MessageCircle, Phone } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -98,6 +98,10 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <div className="flex items-center gap-3"><img src="/logo.png" alt="Honeywell School crest" width={44} height={48} className="size-11 shrink-0 rounded-md bg-white object-contain p-0.5" /><span className="font-extrabold text-paper">Honeywell School</span></div>
             <p className="mt-4 font-serif text-lg italic leading-snug text-paper">“Love and Education That Enrich for Life Time.”</p>
             <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.18em] text-paper/50">Our motto</p>
+            <div className="mt-4 flex items-center gap-2">
+              <Button asChild variant="outline" size="icon" className="size-9 rounded-full border-paper/20 bg-transparent text-paper/70 hover:bg-paper/10 hover:text-paper" aria-label="Honeywell School on Facebook"><a href="https://web.facebook.com/honeywellschool" target="_blank" rel="noreferrer"><Facebook className="size-4" /></a></Button>
+              <Button asChild variant="outline" size="icon" className="size-9 rounded-full border-paper/20 bg-transparent text-paper/70 hover:bg-paper/10 hover:text-paper" aria-label="Honeywell School on Instagram"><a href="https://www.instagram.com/honeywellschool/" target="_blank" rel="noreferrer"><Instagram className="size-4" /></a></Button>
+            </div>
           </div>
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-action">Explore</p>
