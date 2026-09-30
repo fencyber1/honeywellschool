@@ -46,7 +46,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
 const answers = [
   ["How do I apply?", "Visit Admissions for the four-step application guide and enquiry form."],
   ["Can I tour the campus?", "Yes. Use Contact Admissions to request a weekday visit."],
-  ["What ages do you serve?", "We welcome children from 3 months to 6 years — call 024 436 2657 or 055 941 9530 and we will help with class placement."],
+  ["What ages do you serve?", "We welcome children from 6 months to 5 years — call 024 436 2657 or 055 941 9530 and we will help with class placement."],
 ] as const;
 
 export function AdmissionsChat() {
