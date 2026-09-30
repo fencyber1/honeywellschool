@@ -38,7 +38,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
       <label className="mt-4 block text-sm text-paper/80">Preferred branch<select className="mt-1 w-full rounded-md border border-paper/20 bg-ink px-3 py-2.5 text-paper outline-none focus:border-action"><option>Airport Residential Area</option><option>Palm Valley Estates, Oyarifa</option><option>Not sure yet</option></select></label>
       {!compact && <label className="mt-4 block text-sm text-paper/80">How can we help?<textarea required rows={4} className="mt-1 w-full resize-none rounded-md border border-paper/20 bg-paper/10 px-3 py-2.5 text-paper outline-none placeholder:text-paper/40 focus:border-action" placeholder="Tell us about your child and what you would like to know." /></label>}
       <Button type="submit" className="mt-5 h-11 w-full rounded-none bg-action text-action-foreground hover:bg-action/90"><Send /> Send to Admissions</Button>
-      {sent ? <p role="status" className="mt-3 flex items-center justify-center gap-2 text-sm font-semibold text-paper"><Check className="size-4 text-growth" /> Thank you — we will be in touch shortly.</p> : <p className="mt-3 text-center text-[11px] text-paper/50">Prefer to talk? Call 024 436 2657.</p>}
+      {sent ? <p role="status" className="mt-3 flex items-center justify-center gap-2 text-sm font-semibold text-paper"><Check className="size-4 text-growth" /> Thank you — we will be in touch shortly.</p> : <p className="mt-3 text-center text-[11px] text-paper/50">Prefer to talk? Call 024 436 2657 or 055 941 9530.</p>}
     </form>
   );
 }
@@ -46,7 +46,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
 const answers = [
   ["How do I apply?", "Visit Admissions for the four-step application guide and enquiry form."],
   ["Can I tour the campus?", "Yes. Use Contact Admissions to request a weekday visit."],
-  ["What ages do you serve?", "We welcome children from 3 months to 6 years — call 024 436 2657 and we will help with class placement."],
+  ["What ages do you serve?", "We welcome children from 3 months to 6 years — call 024 436 2657 or 055 941 9530 and we will help with class placement."],
 ] as const;
 
 export function AdmissionsChat() {

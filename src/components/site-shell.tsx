@@ -31,9 +31,9 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <img
               src="/logo.png"
               alt="Honeywell School crest"
-              width={44}
+              width={48}
               height={48}
-              className="size-11 shrink-0 rounded-md bg-white object-contain p-0.5 shadow-sm ring-1 ring-ink/10"
+              className="size-12 shrink-0 rounded-full bg-white object-contain p-0.5 shadow-sm ring-1 ring-ink/10"
             />
             <span className="leading-none">
               <span className="block text-[15px] font-extrabold">HONEYWELL SCHOOL</span>
@@ -68,7 +68,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon" aria-label="Open navigation"><Menu /></Button>
+              <Button size="icon" className="bg-action text-action-foreground hover:bg-action/90" aria-label="Open navigation"><Menu /></Button>
             </SheetTrigger>
             <SheetContent className="w-[88%] bg-paper">
               <SheetHeader className="text-left">
@@ -95,7 +95,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <footer className="bg-ink pb-20 text-paper/70 lg:pb-0">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-[1.2fr_1fr_1fr]">
           <div>
-            <div className="flex items-center gap-3"><img src="/logo.png" alt="Honeywell School crest" width={44} height={48} className="size-11 shrink-0 rounded-md bg-white object-contain p-0.5" /><span className="font-extrabold text-paper">Honeywell School</span></div>
+            <div className="flex items-center gap-3"><img src="/logo.png" alt="Honeywell School crest" width={48} height={48} className="size-12 shrink-0 rounded-full bg-white object-contain p-0.5" /><span className="font-extrabold text-paper">Honeywell School</span></div>
             <p className="mt-4 font-serif text-lg italic leading-snug text-paper">“Love and Education That Enrich for a Life Time.”</p>
             <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.18em] text-paper/50">Our motto</p>
             <div className="mt-4 flex items-center gap-2">
@@ -113,7 +113,8 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-action">Admissions</p>
             <div className="mt-4 space-y-3 text-sm">
-              <a href="tel:+233244362657" className="flex items-center gap-2 hover:text-paper"><Phone className="size-4" /> 024 436 2657</a>
+              <a href="tel:+233244362657" className="flex items-center gap-2 hover:text-paper"><Phone className="size-4" /> Airport: 024 436 2657</a>
+              <a href="tel:+233559419530" className="flex items-center gap-2 hover:text-paper"><Phone className="size-4" /> Oyarifa: 055 941 9530</a>
               <a href="https://www.google.com/maps/search/?api=1&query=12+Osibisa+Close+Airport+West+Accra" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-paper"><MapPin className="size-4" /> Branch 1 — 12 Osibisa Close, Airport West</a>
               <a href="https://www.google.com/maps/search/?api=1&query=Honeywell+School+Palm+Valley+Estates+Oyarifa" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-paper"><MapPin className="size-4" /> Branch 2 — Palm Valley Estates, Oyarifa</a>
               <a href="mailto:honeywellschools@gmail.com" className="flex items-center gap-2 hover:text-paper"><Mail className="size-4" /> honeywellschools@gmail.com</a>
