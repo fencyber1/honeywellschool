@@ -27,18 +27,38 @@ export function Section({ eyebrow, title, children, dark = false }: { eyebrow: s
 
 export function ContactForm({ compact = false }: { compact?: boolean }) {
   const [sent, setSent] = useState(false);
-  function submit(event: FormEvent<HTMLFormElement>) { event.preventDefault(); setSent(true); }
+  function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const values = new FormData(event.currentTarget);
+    const get = (name: string) => String(values.get(name) ?? "").trim();
+    const lines = [
+      "Hello Honeywell School \u2014 admission enquiry",
+      "",
+      `Parent: ${get("name")}`,
+      `Phone: ${get("phone")}`,
+      `Email: ${get("email")}`,
+      `Class: ${get("class")}`,
+      `Branch: ${get("branch")}`,
+    ];
+    if (!compact) {
+      lines.push("");
+      lines.push(`Message: ${get("message")}`);
+    }
+    window.open(`https://wa.me/233244362657?text=${encodeURIComponent(lines.join("\n"))}`, "_blank", "noopener");
+    setSent(true);
+  }
   return (
     <form onSubmit={submit} className="rounded-lg border border-paper/20 bg-paper/10 p-5 backdrop-blur-md sm:p-7">
       <div className="grid gap-4 sm:grid-cols-2">
-        <label className="text-sm text-paper/80">Parent name<input required className="mt-1 w-full rounded-md border border-paper/20 bg-paper/10 px-3 py-2.5 text-paper outline-none placeholder:text-paper/40 focus:border-action" placeholder="Your name" /></label>
-        <label className="text-sm text-paper/80">Email<input required type="email" className="mt-1 w-full rounded-md border border-paper/20 bg-paper/10 px-3 py-2.5 text-paper outline-none placeholder:text-paper/40 focus:border-action" placeholder="yourname@gmail.com" /></label>
+        <label className="text-sm text-paper/80">Parent name<input required name="name" className="mt-1 w-full rounded-md border border-paper/20 bg-paper/10 px-3 py-2.5 text-paper outline-none placeholder:text-paper/40 focus:border-action" placeholder="Your name" /></label>
+        <label className="text-sm text-paper/80">Email<input required type="email" name="email" className="mt-1 w-full rounded-md border border-paper/20 bg-paper/10 px-3 py-2.5 text-paper outline-none placeholder:text-paper/40 focus:border-action" placeholder="yourname@gmail.com" /></label>
       </div>
-      <label className="mt-4 block text-sm text-paper/80">Class of interest<select className="mt-1 w-full rounded-md border border-paper/20 bg-ink px-3 py-2.5 text-paper outline-none focus:border-action"><option>Creche</option><option>Nursery</option><option>Preschool</option><option>Not sure yet</option></select></label>
-      <label className="mt-4 block text-sm text-paper/80">Preferred branch<select className="mt-1 w-full rounded-md border border-paper/20 bg-ink px-3 py-2.5 text-paper outline-none focus:border-action"><option>Airport Residential Area</option><option>Palm Valley Estates, Oyarifa</option><option>Not sure yet</option></select></label>
-      {!compact && <label className="mt-4 block text-sm text-paper/80">How can we help?<textarea required rows={4} className="mt-1 w-full resize-none rounded-md border border-paper/20 bg-paper/10 px-3 py-2.5 text-paper outline-none placeholder:text-paper/40 focus:border-action" placeholder="Tell us about your child and what you would like to know." /></label>}
+      <label className="mt-4 block text-sm text-paper/80">Phone number<input required type="tel" inputMode="tel" name="phone" className="mt-1 w-full rounded-md border border-paper/20 bg-paper/10 px-3 py-2.5 text-paper outline-none placeholder:text-paper/40 focus:border-action" placeholder="024 436 2657" /></label>
+      <label className="mt-4 block text-sm text-paper/80">Class of interest<select name="class" className="mt-1 w-full rounded-md border border-paper/20 bg-ink px-3 py-2.5 text-paper outline-none focus:border-action"><option>Creche</option><option>Nursery</option><option>Preschool</option><option>Not sure yet</option></select></label>
+      <label className="mt-4 block text-sm text-paper/80">Preferred branch<select name="branch" className="mt-1 w-full rounded-md border border-paper/20 bg-ink px-3 py-2.5 text-paper outline-none focus:border-action"><option>Airport Residential Area</option><option>Palm Valley Estates, Oyarifa</option><option>Not sure yet</option></select></label>
+      {!compact && <label className="mt-4 block text-sm text-paper/80">How can we help?<textarea required name="message" rows={4} className="mt-1 w-full resize-none rounded-md border border-paper/20 bg-paper/10 px-3 py-2.5 text-paper outline-none placeholder:text-paper/40 focus:border-action" placeholder="Tell us about your child and what you would like to know." /></label>}
       <Button type="submit" className="mt-5 h-11 w-full rounded-none bg-action text-action-foreground hover:bg-action/90"><Send /> Send to Admissions</Button>
-      {sent ? <p role="status" className="mt-3 flex items-center justify-center gap-2 text-sm font-semibold text-paper"><Check className="size-4 text-growth" /> Thank you — we will be in touch shortly.</p> : <p className="mt-3 text-center text-[11px] text-paper/50">Prefer to talk? Call 024 436 2657 or 055 941 9530.</p>}
+      {sent ? <p role="status" className="mt-3 flex items-center justify-center gap-2 text-sm font-semibold text-paper"><Check className="size-4 text-growth" /> WhatsApp is opening — press send there to reach admissions.</p> : <p className="mt-3 text-center text-[11px] text-paper/50">Prefer to talk? Call 024 436 2657 or 055 941 9530.</p>}
     </form>
   );
 }
