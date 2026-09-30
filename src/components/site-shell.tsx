@@ -134,6 +134,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
         <div className="mx-auto flex max-w-md gap-2">
           <Button asChild variant="outline" size="icon" className="size-11 shrink-0 rounded-full"><a href="tel:+233244362657" aria-label="Call admissions"><Phone /></a></Button>
           <Button asChild className="h-11 flex-1 rounded-none bg-action text-action-foreground hover:bg-action/90"><Link to="/contact">Contact Admissions</Link></Button>
+          <Button asChild variant="outline" size="icon" className="size-11 shrink-0 rounded-full border-growth/40 text-growth hover:border-growth hover:bg-growth/10"><a href="https://wa.me/233559419530?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admissions." target="_blank" rel="noreferrer" aria-label="Chat with the principal on WhatsApp"><MessageCircle /></a></Button>
         </div>
       </div>
     </div>
