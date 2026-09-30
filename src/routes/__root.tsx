@@ -79,10 +79,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { title: "Honeywell School — Preschool & Creche in Accra, Ghana" },
+      { name: "description", content: "Honeywell School is a preschool, creche and nursery in Accra, Ghana — UK EYFS curriculum for children 6 months to 5 years." },
       { name: "author", content: "Honeywell School" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Honeywell School" },
+      { property: "og:locale", content: "en_GH" },
+      { property: "og:image", content: "https://honeywelledugh.com/og-image.png" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "theme-color", content: "#041a36" },
     ],
     links: [
       {
@@ -90,6 +95,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/logo.png", type: "image/png" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "apple-touch-icon", href: "/logo.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" },

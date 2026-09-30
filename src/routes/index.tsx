@@ -7,19 +7,15 @@ import heroImage from "@/assets/honeywell-reading-sharp.png";
 import campusImage from "@/assets/honeywell-playground-sharp.png";
 import { Button } from "@/components/ui/button";
 import { ContactForm, Section } from "@/components/school-shared";
+import { JsonLd, seoPage, schoolSchema } from "@/lib/seo";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  head: () => ({ meta: [
-    { title: "Honeywell School — Love and Education That Enrich for a Life Time" },
-    { name: "description", content: "Discover Honeywell School's preschool programs, campus life, and admissions experience." },
-    { property: "og:title", content: "Honeywell School — Love and Education That Enrich for a Life Time" },
-    { property: "og:description", content: "A warm, ambitious school community where every student is known and challenged." },
-    { property: "og:type", content: "website" },
-    { name: "twitter:card", content: "summary_large_image" },
-  ], links: [{ rel: "canonical", href: "/" }] }),
+  head: () => seoPage({
+    title: "Honeywell School — Love and Education That Enrich for a Life Time",
+    description:
+      "Honeywell School is a preschool, creche and nursery in Accra, Ghana — UK EYFS curriculum for children 6 months to 5 years at Airport Residential Area and Oyarifa.",
+    path: "/",
+  }),
   component: Index,
 });
 
@@ -60,6 +56,7 @@ function RotatingWord() {
 function Index() {
   return (
     <main>
+      <JsonLd data={schoolSchema} />
       <section className="relative overflow-hidden bg-ink text-paper">
         <div className="absolute -right-24 -top-24 size-[520px] rounded-full bg-trust/30 blur-3xl" />
         <div className="absolute -bottom-32 left-1/3 size-[420px] rounded-full bg-action/15 blur-3xl" />

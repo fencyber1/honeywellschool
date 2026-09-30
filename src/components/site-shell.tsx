@@ -1,8 +1,9 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { Facebook, Instagram, Mail, MapPin, Menu, MessageCircle, Phone } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
+import { JsonLd, breadcrumbSchema, schoolSchema } from "@/lib/seo";
 import {
   Sheet,
   SheetClose,
@@ -23,8 +24,12 @@ const navigation = [
 ] as const;
 
 export function SiteShell({ children }: { children: ReactNode }) {
+  const { pathname } = useLocation();
+  const crumbs = breadcrumbSchema(pathname);
   return (
     <div className="min-h-screen overflow-x-hidden bg-paper font-display text-ink">
+      <JsonLd data={schoolSchema} />
+      {crumbs && <JsonLd data={crumbs} />}
       <header className="sticky top-0 z-50 border-b border-ink/10 bg-paper/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
           <Link to="/" className="flex items-center gap-3" aria-label="Honeywell School home">
@@ -50,7 +55,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 to={item.to}
                 className="text-sm font-semibold text-ink-soft transition-colors hover:text-ink"
                 activeProps={{ className: "text-ink" }}
-                activeOptions={item.to === "/" ? { exact: true } : undefined}
+                {...(item.to === "/" ? { activeOptions: { exact: true } } : {})}
               >
                 {item.label}
               </Link>

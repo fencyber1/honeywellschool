@@ -110,7 +110,7 @@ Make every element serve that goal.
 
 This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://honeywellschool.lovable.app
+**Live app**: https://honeywelledugh.com
 
 ## Build with Lovable
 
