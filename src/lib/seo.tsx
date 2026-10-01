@@ -152,6 +152,7 @@ const breadcrumbLabels: Record<string, string> = {
   "/admissions": "Admissions",
   "/campus": "Campus & Facilities",
   "/team": "Meet the Team",
+  "/gallery": "Photo Gallery",
   "/contact": "Contact Admissions",
 };
 

@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AdmissionsRouteImport } from './routes/admissions'
 import { Route as CampusRouteImport } from './routes/campus'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as TeamRouteImport } from './routes/team'
 
@@ -42,6 +43,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProgramsRoute = ProgramsRouteImport.update({
   id: '/programs',
   path: '/programs',
@@ -59,6 +65,7 @@ export interface FileRoutesByFullPath {
   '/admissions': typeof AdmissionsRoute
   '/campus': typeof CampusRoute
   '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
   '/programs': typeof ProgramsRoute
   '/team': typeof TeamRoute
 }
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/admissions': typeof AdmissionsRoute
   '/campus': typeof CampusRoute
   '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
   '/programs': typeof ProgramsRoute
   '/team': typeof TeamRoute
 }
@@ -78,6 +86,7 @@ export interface FileRoutesById {
   '/admissions': typeof AdmissionsRoute
   '/campus': typeof CampusRoute
   '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
   '/programs': typeof ProgramsRoute
   '/team': typeof TeamRoute
 }
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/admissions'
     | '/campus'
     | '/contact'
+    | '/gallery'
     | '/programs'
     | '/team'
   fileRoutesByTo: FileRoutesByTo
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/admissions'
     | '/campus'
     | '/contact'
+    | '/gallery'
     | '/programs'
     | '/team'
   id:
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/admissions'
     | '/campus'
     | '/contact'
+    | '/gallery'
     | '/programs'
     | '/team'
   fileRoutesById: FileRoutesById
@@ -117,6 +129,7 @@ export interface RootRouteChildren {
   AdmissionsRoute: typeof AdmissionsRoute
   CampusRoute: typeof CampusRoute
   ContactRoute: typeof ContactRoute
+  GalleryRoute: typeof GalleryRoute
   ProgramsRoute: typeof ProgramsRoute
   TeamRoute: typeof TeamRoute
 }
@@ -158,6 +171,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/programs': {
       id: '/programs'
       path: '/programs'
@@ -181,6 +201,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdmissionsRoute: AdmissionsRoute,
   CampusRoute: CampusRoute,
   ContactRoute: ContactRoute,
+  GalleryRoute: GalleryRoute,
   ProgramsRoute: ProgramsRoute,
   TeamRoute: TeamRoute,
 }
