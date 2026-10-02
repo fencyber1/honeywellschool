@@ -68,7 +68,7 @@ function HeroGallery() {
     return () => window.clearInterval(id);
   }, []);
   return (
-    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl" role="img" aria-label="Preschool in Ghana — Honeywell School gallery">
+    <div className="relative aspect-[4/5] w-full overflow-hidden" role="img" aria-label="Preschool in Ghana — Honeywell School gallery">
       {HERO_PHOTOS.map((src, i) => (
         <img
           key={src}
@@ -77,6 +77,10 @@ function HeroGallery() {
           aria-hidden="true"
           fetchPriority={i === 0 ? "high" : "auto"}
           loading={i === 0 ? "eager" : "lazy"}
+          style={{
+            maskImage: "radial-gradient(ellipse 80% 75% at 50% 45%, black 55%, transparent 95%)",
+            WebkitMaskImage: "radial-gradient(ellipse 80% 75% at 50% 45%, black 55%, transparent 95%)",
+          }}
           className={`absolute inset-0 size-full object-cover object-center transition-all duration-1000 ${i === index ? "opacity-100 blur-0" : "opacity-0 blur-lg"}`}
         />
       ))}
