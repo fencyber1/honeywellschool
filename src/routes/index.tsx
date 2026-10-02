@@ -53,12 +53,11 @@ function RotatingWord() {
 }
 
 const HERO_PHOTOS = [
-  "/gallery/airport/airport-01.jpg",
-  "/gallery/airport/airport-09.jpg",
-  "/gallery/airport/airport-17.jpg",
-  "/gallery/airport/airport-25.jpg",
-  "/gallery/airport/airport-33.jpg",
-  "/gallery/airport/airport-41.jpg",
+  "/gallery/airport/airport-21.jpg",
+  "/gallery/airport/airport-23.jpg",
+  "/gallery/airport/airport-27.jpg",
+  "/gallery/airport/airport-30.jpg",
+  "/gallery/airport/airport-34.jpg",
 ] as const;
 
 function HeroGallery() {
