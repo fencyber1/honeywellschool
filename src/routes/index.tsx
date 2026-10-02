@@ -3,7 +3,6 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Award, BookOpen, ShieldCheck, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import heroImage from "@/assets/honeywell-reading-sharp.png";
 import campusImage from "@/assets/honeywell-playground-sharp.png";
 import { Button } from "@/components/ui/button";
 import { ContactForm, Section } from "@/components/school-shared";
@@ -53,6 +52,38 @@ function RotatingWord() {
   );
 }
 
+const HERO_PHOTOS = [
+  "/gallery/airport/airport-01.jpg",
+  "/gallery/airport/airport-09.jpg",
+  "/gallery/airport/airport-17.jpg",
+  "/gallery/airport/airport-25.jpg",
+  "/gallery/airport/airport-33.jpg",
+  "/gallery/airport/airport-41.jpg",
+] as const;
+
+function HeroGallery() {
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    const id = window.setInterval(() => setIndex((i) => (i + 1) % HERO_PHOTOS.length), 4500);
+    return () => window.clearInterval(id);
+  }, []);
+  return (
+    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl" role="img" aria-label="Preschool in Ghana — Honeywell School gallery">
+      {HERO_PHOTOS.map((src, i) => (
+        <img
+          key={src}
+          src={src}
+          alt=""
+          aria-hidden="true"
+          fetchPriority={i === 0 ? "high" : "auto"}
+          loading={i === 0 ? "eager" : "lazy"}
+          className={`absolute inset-0 size-full object-cover object-center transition-all duration-1000 ${i === index ? "opacity-100 blur-0" : "opacity-0 blur-lg"}`}
+        />
+      ))}
+    </div>
+  );
+}
+
 function Index() {
   return (
     <main>
@@ -67,7 +98,7 @@ function Index() {
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-paper/75 sm:text-lg">At Honeywell, every child is known by name, challenged with care, and surrounded by a community that believes in what they can become.</p>
             <div className="mt-8 flex flex-wrap gap-3"><Button asChild className="h-11 rounded-none bg-action text-action-foreground hover:bg-action/90"><Link to="/contact">Contact Admissions <ArrowRight /></Link></Button><Button asChild variant="outline" className="h-11 rounded-none border-paper/20 bg-paper/10 text-paper hover:bg-paper/20 hover:text-paper"><Link to="/programs">Explore programs</Link></Button></div>
           </div>
-          <div className="lg:col-span-5"><div className="relative"><div className="absolute -inset-3 rotate-3 rounded-xl bg-trust/50" /><div className="relative -skew-x-3 overflow-hidden rounded-xl border border-paper/20 bg-paper/10 p-2"><img src={heroImage} alt="Preschool in Ghana — Honeywell School pupils reading together in their classroom" width={1920} height={1281} fetchPriority="high" className="aspect-[4/5] w-full object-cover object-center" /></div></div></div>
+          <div className="lg:col-span-5"><HeroGallery /></div>
         </div>
       </section>
       <Section eyebrow="Why Honeywell" title="The confidence parents look for. The opportunity children deserve."><div className="grid gap-5 md:grid-cols-4">{[[BookOpen,"Ambitious learning","A curriculum that builds mastery, curiosity, and independent thought."],[Users,"Known personally","Small classes and attentive teachers help every child feel seen."],[ShieldCheck,"Safe & supported","Pastoral care and clear safeguarding shape every school day."],[Award,"Beyond the classroom","Arts, sport, leadership, and service reveal new strengths."]].map(([Icon,title,text]) => { const ItemIcon = Icon as typeof BookOpen; return <article key={String(title)} className="rounded-lg border border-ink/10 bg-surface p-6"><ItemIcon className="size-6 text-action" /><h3 className="mt-4 text-lg font-extrabold">{String(title)}</h3><p className="mt-2 text-sm leading-relaxed text-ink-soft">{String(text)}</p></article>; })}</div><div className="mt-8 border-l-4 border-action bg-surface p-6 sm:p-8"><h3 className="text-xl font-black sm:text-2xl">A Foundation for Lifelong Excellence</h3><p className="mt-3 max-w-3xl leading-relaxed text-ink-soft">At Honeywell School, we provide a lifelong foundation of excellence that empowers our students to thrive academically and developmentally — building the confidence and character that carry them to leading schools, and beyond.</p></div></Section>
