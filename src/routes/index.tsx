@@ -1,8 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Award, BookOpen, ShieldCheck, Users } from "lucide-react";
-import { useEffect, useState } from "react";
-
 import campusImage from "@/assets/honeywell-playground-sharp.png";
 import { Button } from "@/components/ui/button";
 import { ContactForm, Section } from "@/components/school-shared";
@@ -18,90 +16,19 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const HERO_WORDS = [
-  "confident",
-  "bright",
-  "bold",
-  "creative",
-  "resilient",
-  "compassionate",
-  "ambitious",
-  "innovative",
-  "disciplined",
-  "limitless",
-] as const;
-
-function RotatingWord() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const id = window.setInterval(() => {
-      setIndex((i) => (i + 1) % HERO_WORDS.length);
-    }, 2500);
-    return () => window.clearInterval(id);
-  }, []);
-
-  return (
-    <>
-      <span className="sr-only">confident</span>
-      <span key={HERO_WORDS[index]} aria-hidden="true" className="font-serif font-medium italic text-action animate-word-in">
-        {HERO_WORDS[index]}
-      </span>
-    </>
-  );
-}
-
-const HERO_PHOTOS = [
-  "/gallery/airport/airport-21.jpg",
-  "/gallery/airport/airport-23.jpg",
-  "/gallery/airport/airport-27.jpg",
-  "/gallery/airport/airport-30.jpg",
-  "/gallery/airport/airport-34.jpg",
-] as const;
-
-function HeroGallery() {
-  const [index, setIndex] = useState(0);
-  useEffect(() => {
-    const id = window.setInterval(() => setIndex((i) => (i + 1) % HERO_PHOTOS.length), 4500);
-    return () => window.clearInterval(id);
-  }, []);
-  return (
-    <div className="relative aspect-[4/5] w-full overflow-hidden" role="img" aria-label="Preschool in Ghana — Honeywell School gallery">
-      {HERO_PHOTOS.map((src, i) => (
-        <img
-          key={src}
-          src={src}
-          alt=""
-          aria-hidden="true"
-          fetchPriority={i === 0 ? "high" : "auto"}
-          loading={i === 0 ? "eager" : "lazy"}
-          style={{
-            maskImage: "radial-gradient(ellipse 80% 75% at 50% 45%, black 55%, transparent 95%)",
-            WebkitMaskImage: "radial-gradient(ellipse 80% 75% at 50% 45%, black 55%, transparent 95%)",
-          }}
-          className={`absolute inset-0 size-full object-cover object-center transition-all duration-1000 ${i === index ? "opacity-100 blur-0" : "opacity-0 blur-lg"}`}
-        />
-      ))}
-    </div>
-  );
-}
-
 function Index() {
   return (
     <main>
       <JsonLd data={schoolSchema} />
       <section className="relative overflow-hidden bg-ink text-paper">
-        <div className="absolute -right-24 -top-24 size-[520px] rounded-full bg-trust/30 blur-3xl" />
-        <div className="absolute -bottom-32 left-1/3 size-[420px] rounded-full bg-action/15 blur-3xl" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-12 lg:py-20">
-          <div className="lg:col-span-7">
-            <p className="inline-flex items-center gap-2 rounded-full border border-paper/15 bg-paper/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em]"><span className="size-1.5 rounded-full bg-action" /> Now enrolling · 2026–27</p>
-            <h1 className="mt-5 max-w-4xl text-5xl font-black leading-[0.95] sm:text-6xl lg:text-7xl">Preschool in Ghana: where curious minds become <RotatingWord /> futures.</h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-paper/75 sm:text-lg">At Honeywell, every child is known by name, challenged with care, and surrounded by a community that believes in what they can become.</p>
-            <div className="mt-8 flex flex-wrap gap-3"><Button asChild className="h-11 rounded-none bg-action text-action-foreground hover:bg-action/90"><Link to="/contact">Contact Admissions <ArrowRight /></Link></Button><Button asChild variant="outline" className="h-11 rounded-none border-paper/20 bg-paper/10 text-paper hover:bg-paper/20 hover:text-paper"><Link to="/programs">Explore programs</Link></Button></div>
-          </div>
-          <div className="lg:col-span-5"><HeroGallery /></div>
+        <img src="/hero.png" alt="" aria-hidden="true" fetchPriority="high" loading="eager" className="absolute inset-0 size-full object-cover object-center" />
+        <div className="absolute inset-0 bg-ink/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/40 to-transparent" />
+        <div className="relative mx-auto max-w-7xl px-5 py-24 sm:py-32 lg:py-40">
+          <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.22em] text-paper/90"><span className="h-px w-10 bg-action" /> Preschool in Ghana · Airport Residential Area · Accra</p>
+          <h1 className="mt-6 max-w-5xl text-5xl font-black leading-[0.95] sm:text-6xl lg:text-7xl">Learn. Play. <span className="font-serif font-medium italic text-action">Grow together.</span></h1>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-paper/75 sm:text-lg">At Honeywell, every child is known by name, challenged with care, and surrounded by a community that believes in what they can become.</p>
+          <div className="mt-8 flex flex-wrap gap-3"><Button asChild className="h-11 rounded-none bg-action text-action-foreground hover:bg-action/90"><Link to="/contact">Contact Admissions <ArrowRight /></Link></Button><Button asChild variant="outline" className="h-11 rounded-none border-paper/20 bg-paper/10 text-paper hover:bg-paper/20 hover:text-paper"><Link to="/programs">Explore programs</Link></Button></div>
         </div>
       </section>
       <Section eyebrow="Why Honeywell" title="The confidence parents look for. The opportunity children deserve."><div className="grid gap-5 md:grid-cols-4">{[[BookOpen,"Ambitious learning","A curriculum that builds mastery, curiosity, and independent thought."],[Users,"Known personally","Small classes and attentive teachers help every child feel seen."],[ShieldCheck,"Safe & supported","Pastoral care and clear safeguarding shape every school day."],[Award,"Beyond the classroom","Arts, sport, leadership, and service reveal new strengths."]].map(([Icon,title,text]) => { const ItemIcon = Icon as typeof BookOpen; return <article key={String(title)} className="rounded-lg border border-ink/10 bg-surface p-6"><ItemIcon className="size-6 text-action" /><h3 className="mt-4 text-lg font-extrabold">{String(title)}</h3><p className="mt-2 text-sm leading-relaxed text-ink-soft">{String(text)}</p></article>; })}</div><div className="mt-8 border-l-4 border-action bg-surface p-6 sm:p-8"><h3 className="text-xl font-black sm:text-2xl">A Foundation for Lifelong Excellence</h3><p className="mt-3 max-w-3xl leading-relaxed text-ink-soft">At Honeywell School, we provide a lifelong foundation of excellence that empowers our students to thrive academically and developmentally — building the confidence and character that carry them to leading schools, and beyond.</p></div></Section>
