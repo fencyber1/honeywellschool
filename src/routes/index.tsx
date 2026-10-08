@@ -52,7 +52,7 @@ function Index() {
         <div className="relative mx-auto max-w-7xl px-5 py-24 sm:py-32 lg:py-40">
           <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.22em] text-paper/90"><span className="h-px w-10 bg-action" /> Preschool in Ghana · Airport Residential Area · Accra</p>
           <h1 className="mt-6 max-w-5xl text-5xl font-black leading-[0.95] sm:text-6xl lg:text-7xl">Learn. Play. <span className="font-serif font-medium italic text-action"><RotatingGrowVerb />{" "}together.</span></h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-paper/75 sm:text-lg">At Honeywell, every child is known by name, challenged with care, and surrounded by a community that believes in what they can become.</p>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-paper/75 sm:text-lg">At Honeywell, we believe every child's future begins with a strong foundation. From the moment they join our school, we nurture their potential, build their confidence, and equip them with the knowledge, values, and skills they need to thrive in the future.</p>
           <div className="mt-8 flex flex-wrap gap-3"><Button asChild className="h-11 rounded-none bg-action text-action-foreground hover:bg-action/90"><Link to="/contact">Contact Admissions <ArrowRight /></Link></Button><Button asChild variant="outline" className="h-11 rounded-none border-paper/20 bg-paper/10 text-paper hover:bg-paper/20 hover:text-paper"><Link to="/programs">Explore programs</Link></Button></div>
         </div>
       </section>
