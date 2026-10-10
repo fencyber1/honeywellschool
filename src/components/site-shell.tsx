@@ -50,7 +50,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-5 xl:flex" aria-label="Main navigation">
+          <nav className="hidden items-center gap-4 lg:flex" aria-label="Main navigation">
             {navigation.map((item) => (
               <Link
                 key={item.to}
