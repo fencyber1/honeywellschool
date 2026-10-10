@@ -22,6 +22,7 @@ const navigation = [
   { label: "Campus", to: "/campus" },
   { label: "Team", to: "/team" },
   { label: "Gallery", to: "/gallery" },
+  { label: "School Tour", to: "/tour" },
 ] as const;
 
 export function SiteShell({ children }: { children: ReactNode }) {
@@ -113,7 +114,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-action">Explore</p>
             <div className="mt-4 grid grid-cols-2 gap-2 text-sm">
-              {navigation.slice(0, 7).map((item) => <Link key={item.to} to={item.to} className="hover:text-paper">{item.label}</Link>)}
+              {navigation.slice(0, 8).map((item) => <Link key={item.to} to={item.to} className="hover:text-paper">{item.label}</Link>)}
             </div>
           </div>
           <div>
