@@ -75,7 +75,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
           <Sheet>
             <SheetTrigger asChild>
-              <Button size="icon" className="bg-action text-action-foreground hover:bg-action/90" aria-label="Open navigation"><Menu /></Button>
+              <Button size="icon" className="bg-action text-action-foreground hover:bg-action/90 lg:hidden" aria-label="Open navigation"><Menu /></Button>
             </SheetTrigger>
             <SheetContent className="w-[88%] bg-paper">
               <SheetHeader className="text-left">
