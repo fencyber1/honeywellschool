@@ -2,10 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
-import campusPhoto from "@/assets/honeywell-campus.jpg";
-import exteriorPhoto from "@/assets/honeywell-exterior.jpg";
-import libraryPhoto from "@/assets/honeywell-library.jpg";
-import sportsPhoto from "@/assets/honeywell-sports.jpg";
 import { PageHero, Section } from "@/components/school-shared";
 import { Button } from "@/components/ui/button";
 import { seoPage } from "@/lib/seo";
@@ -15,7 +11,7 @@ export const Route = createFileRoute("/tour")({
     seoPage({
       title: "School Tour — Buildings & Facilities | Honeywell School",
       description:
-        "Take a school tour of Honeywell School in Accra, Ghana — our gate and entrance, school buildings, library, and sports and play areas.",
+        "Take a school tour of Honeywell School in Accra, Ghana — our gate and entrance, playground courtyard, outdoor play equipment, and Oyarifa branch.",
       path: "/tour",
     }),
   component: Tour,
@@ -23,10 +19,6 @@ export const Route = createFileRoute("/tour")({
 
 const photos = [
   { src: "/campus-gate.jpeg", name: "School Gate & Entrance" },
-  { src: campusPhoto, name: "Campus View" },
-  { src: exteriorPhoto, name: "School Building" },
-  { src: libraryPhoto, name: "Library" },
-  { src: sportsPhoto, name: "Sports & Play Area" },
   { src: "/tour/g.jpeg", name: "Playground Courtyard" },
   { src: "/tour/i.jpeg", name: "Outdoor Play Equipment" },
   { src: "/tour/r.jpeg", name: "Classroom Block Courtyard" },
@@ -64,11 +56,11 @@ function Tour() {
       <PageHero
         eyebrow="School tour"
         title="Take a look around our school."
-        intro="Our gate and entrance, school buildings, library, and sports and play areas — Honeywell School, Accra."
+        intro="Our gate and entrance, playground courtyard, outdoor play equipment, and Oyarifa branch — Honeywell School, Accra."
         image="/campus-gate.jpeg"
         imageAlt="The gate and entrance of Honeywell School"
       />
-      <Section eyebrow="Buildings & facilities" title="Nine views of Honeywell.">
+      <Section eyebrow="Buildings & facilities" title="Five views of Honeywell.">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
           {photos.map((photo, i) => (
             <button
