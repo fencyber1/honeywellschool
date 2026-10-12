@@ -78,11 +78,11 @@
   --radius: 0.5rem;
   --ink: oklch(0.22 0.065 254);
   --ink-soft: oklch(0.38 0.055 252);
-  --trust: oklch(0.45 0.12 155);
-  --trust-deep: oklch(0.32 0.1 155);
+  --trust: oklch(0.44 0.15 155);
+  --trust-deep: oklch(0.3 0.12 155);
   --growth: oklch(0.5 0.105 157);
-  --action: oklch(0.52 0.15 155);
-  --gold: oklch(0.83 0.16 95);
+  --action: oklch(0.5 0.18 155);
+  --gold: oklch(0.82 0.19 92);
   --action-foreground: oklch(0.99 0.003 250);
   --paper: oklch(0.96 0.012 255);
   --paper-2: oklch(0.92 0.018 255);
