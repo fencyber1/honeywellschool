@@ -26,7 +26,7 @@ export function seoPage(opts: { title: string; description: string; path: string
       { name: "twitter:title", content: opts.title },
       { name: "twitter:description", content: opts.description },
       { name: "twitter:image", content: OG_IMAGE },
-      { name: "theme-color", content: "#0B3D21" },
+      { name: "theme-color", content: "#00290E" },
     ],
     links: [{ rel: "canonical", href: url }],
   };

@@ -76,8 +76,8 @@
 
 :root {
   --radius: 0.5rem;
-  --ink: oklch(0.22 0.065 254);
-  --ink-soft: oklch(0.38 0.055 252);
+  --ink: oklch(0.24 0.075 155);
+  --ink-soft: oklch(0.38 0.06 155);
   --trust: oklch(0.44 0.15 155);
   --trust-deep: oklch(0.3 0.12 155);
   --growth: oklch(0.5 0.105 157);
