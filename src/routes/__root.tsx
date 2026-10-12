@@ -87,7 +87,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:locale", content: "en_GH" },
       { property: "og:image", content: "https://honeywelledugh.com/og-image.png" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "theme-color", content: "#041a36" },
+      { name: "theme-color", content: "#0B3D21" },
     ],
     links: [
       {
