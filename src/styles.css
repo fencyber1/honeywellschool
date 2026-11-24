@@ -186,3 +186,80 @@
   display: inline-block;
   animation: word-in 0.5s ease both;
 }
+
+/* ---------- School brochure (A4 print) ---------- */
+
+.brochure-scale {
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.brochure-page {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+  box-shadow: 0 24px 60px -20px rgb(2 40 14 / 0.45);
+}
+
+.brochure-page + .brochure-page {
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 900px) {
+  .brochure-scale { zoom: 0.72; }
+}
+
+@media screen and (max-width: 640px) {
+  .brochure-scale { zoom: 0.5; }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+  }
+
+  body:has(.brochure-page) header,
+  body:has(.brochure-page) footer,
+  body:has(.brochure-page) .no-print,
+  body:has(.brochure-page) .fixed {
+    display: none !important;
+  }
+
+  body:has(.brochure-page) main {
+    padding: 0 !important;
+    background: #fff !important;
+    overflow: visible !important;
+  }
+
+  .brochure-scale {
+    zoom: 1 !important;
+    width: auto;
+    margin: 0;
+  }
+
+  .brochure-page {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 !important;
+    box-shadow: none;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .brochure-page:last-of-type {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
